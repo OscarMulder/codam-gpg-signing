@@ -43,5 +43,20 @@ Now just tell git to sign all commits:
 git config --global commit.gpgsign true
 ```
 
+## Restart GPG daemon
+You might need to restart your gpg daemon.
+```
+gpgconf --kill gpg-agent
+gpg-agent --daemon
+```
+
+## Troubleshooting
+You can test your gpg daemon by running:
+```
+echo "test" | gpg --clearsign
+```
+If this doesn't work, you have a problem in your gpg config. If this works the problem is in your git config.
+
 ## Done!
 Your commits should now be signed and show up on Github as Verified.
+
