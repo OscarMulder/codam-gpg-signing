@@ -1,2 +1,47 @@
-# codam-gpg-signing
+# codam gpg signing
 Instructions for installing gpg and signing your commits with it on Codam imacs.
+
+Using the following instructions you should be able to sign your commits.
+
+## Install homebrew
+Using kube's homebrew installer script:
+```sh
+curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
+```
+
+## Install gpg
+```
+brew install gpg2
+```
+
+## Configure gpg
+Gpg needs to be able to find your pinentry (the prompt that asks for your password to verify you are the owner of the key).
+Because 42homebrew installs software in a different folder then usual, you need to tell gpg where to find it.
+Run `where pinentry`. The output is the path to pinentry
+Open `~/.gnupg/gpg-agent.conf` in your favourite code editor:
+```
+code ~/.gnupg/gpg-agent.conf
+```
+Add the following line, replace the path with your own (the output of `where pinentry`)
+```
+pinentry-program /Users/USERNAME/.brew/bin/pinentry
+```
+
+## Creating a pgp key
+Follow the Github instructions to create a key and add it to your git config. Make sure to use a Github verified email while creating the key.
+1. https://help.github.com/en/articles/generating-a-new-gpg-key
+2. https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account
+3. https://help.github.com/en/articles/telling-git-about-your-signing-key
+
+## Configuring git to sign your commits
+At this point you should have your pgp key created and added to your git config and github. Now all we need to do is configure git to use the key to sign the requests. Again, because homebrew uses a different path, we should tell github where to find gpg. You can use `where gpg` to find it. Change the path to your own.
+```
+git config --global gpg.program /Users/USERNAME/.brew/bin/gpg
+```
+Now just tell git to sign all commits:
+```
+git config --global commit.gpgsign true
+```
+
+## Done!
+Your commits should now be signed and show up on Github as Verified.
