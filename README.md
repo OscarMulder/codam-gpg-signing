@@ -1,4 +1,4 @@
-# codam gpg signing
+# Codam gpg signing
 Instructions for installing gpg and signing your commits with it on Codam imacs.
 
 Using the following instructions you should be able to sign your commits.
