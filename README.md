@@ -44,7 +44,8 @@ git config --global commit.gpgsign true
 ```
 
 ## Restart GPG daemon
-You might need to restart your gpg daemon.
+You might need to restart your gpg daemon. Also after closing and reopening your session, you sometimes need to restart it.
+If you get any error from git. Just restart it.
 ```
 gpgconf --kill gpg-agent
 gpg-agent --daemon
