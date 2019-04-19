@@ -9,22 +9,22 @@ Using kube's homebrew installer script:
 curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
 ```
 
-## Install gpg
+## Install gpg & pinentry-mac
 ```
-brew install gpg2
+brew install gpg2 pinentry-mac
 ```
 
 ## Configure gpg
 Gpg needs to be able to find your pinentry (the prompt that asks for your password to verify you are the owner of the key).
 Because 42homebrew installs software in a different folder then usual, you need to tell gpg where to find it.
-Run `where pinentry`. The output is the path to pinentry.
+Run `where pinentry-mac`. The output is the path to pinentry-mac.
 Open `~/.gnupg/gpg-agent.conf` in your favourite code editor.
 ```
 code ~/.gnupg/gpg-agent.conf
 ```
-Add the following line, replace the path with your own (the output of `where pinentry`).
+Add the following line, replace the path with your own (the output of `where pinentry-mac`).
 ```
-pinentry-program /Users/USERNAME/.brew/bin/pinentry
+pinentry-program /Users/USERNAME/.brew/bin/pinentry-mac
 ```
 
 ## Creating a pgp key
