@@ -13,6 +13,7 @@ curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
 ```
 brew install gpg2 pinentry-mac
 ```
+Installing gpg might take a while...
 
 ## Configure gpg
 Gpg needs to be able to find your pinentry (the prompt that asks for your password to verify you are the owner of the key).
