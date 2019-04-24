@@ -25,7 +25,7 @@ code ~/.gnupg/gpg-agent.conf
 ```
 Add the following line, replace the path with your own (the output of `where pinentry-mac`).
 ```
-pinentry-program /Users/$USER/.brew/bin/pinentry-mac
+pinentry-program /Users/ENTER USERNAME HERE/.brew/bin/pinentry-mac
 ```
 
 ## Creating a pgp key
@@ -33,6 +33,17 @@ Follow the Github instructions to create a key and add it to your git config. Ma
 1. https://help.github.com/en/articles/generating-a-new-gpg-key
 2. https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account
 3. https://help.github.com/en/articles/telling-git-about-your-signing-key
+
+## Make sure you have set git name and email
+Run this command to see your git configuration.
+```
+git config --global --list
+```
+If user.name and/or user.email or not set properly, you can set them with these commands. Make sure to set an email that is verified by github.
+```
+git config --global user.name Your Name
+git config --global user.email me@example.com
+```
 
 ## Configuring git to sign your commits
 At this point you should have your pgp key created and added to your git config and github. Now all we need to do is configure git to use the key to sign the requests. Again, because homebrew uses a different path, we should tell github where to find gpg. You can use `where gpg` to find it. Change the path to your own.
