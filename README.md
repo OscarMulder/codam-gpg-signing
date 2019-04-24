@@ -1,5 +1,5 @@
 # Codam gpg signing
-Instructions for installing gpg and signing your commits with it on Codam imacs.
+Instructions for installing gpg and signing your commits with it on Codam imacs. I decided to write these instructions because I had a lot of issues while setting up commit signing. I hope it will help you have less issues.
 
 Using the following instructions you should be able to sign your commits.
 
@@ -13,7 +13,7 @@ curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
 ```
 brew install gpg2 pinentry-mac
 ```
-Installing gpg might take a while...
+Installing gpg might take a while... I choose pinentry-mac because it's more stable then the "default" pinentry program. Pinentry-mac seems to actually keep the password for the key in the OSX keychain, so you don't have to re-enter your password everytime you start a new session. Also, pinentry crashed a few times before I switched to pinentry-mac, so far I had no issues with pinentry-mac, so I would recommend using it.
 
 ## Configure gpg
 Gpg needs to be able to find your pinentry (the prompt that asks for your password to verify you are the owner of the key).
