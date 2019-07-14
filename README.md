@@ -46,7 +46,7 @@ git config --global user.email me@example.com
 ```
 
 ## Configuring git to sign your commits
-At this point you should have your pgp key created and added to your git config and github. Now all we need to do is configure git to use the key to sign the requests. Again, because homebrew uses a different path, we should tell github where to find gpg. You can use `where gpg` to find it. Change the path to your own.
+At this point you should have your gpg key created and added to your git config and github. Now all we need to do is configure git to use the key to sign the requests. Again, because homebrew uses a different path, we should tell github where to find gpg. You can use `where gpg` to find it. Change the path to your own.
 ```
 git config --global gpg.program /Users/$USER/.brew/bin/gpg
 ```
