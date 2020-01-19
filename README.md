@@ -28,7 +28,7 @@ Add the following line, replace the path with your own (the output of `where pin
 pinentry-program /Users/ENTER USERNAME HERE/.brew/bin/pinentry-mac
 ```
 
-## Creating a pgp key
+## Creating a gpg key
 Follow the Github instructions to create a key and add it to your git config. Make sure to use a Github verified email while creating the key.
 1. https://help.github.com/en/articles/generating-a-new-gpg-key
 2. https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account
